@@ -40,9 +40,8 @@ taylor-cone-solver/
 │   │   ├── immersed_boundary.py # White-exact stencils
 │   │   ├── interface.py          # Young-Laplace-Maxwell balance
 │   │   └── optimization.py       # Shape optimization (experimental)
-│   ├── experimental/    # Imaging toolkit and synthetic validation
 │   ├── tests/           # 84 automated tests
-│   └── examples/        # 12 demonstration scripts
+│   └── examples/        # Demonstration scripts
 ├── app/                 # Streamlit interactive application
 │   ├── streamlit_app.py          # Main entry point
 │   ├── app_pages/                # Multi-page interface
@@ -70,7 +69,7 @@ git clone https://github.com/eyang8216/taylor-cone-solver.git
 cd taylor-cone-solver
 
 # Install the package
-pip install -e ".[imaging,app]"    # Optional extras: imaging toolkit, Streamlit app
+pip install -e ".[app]"    # Optional: Streamlit app
 ```
 
 The package can also be used without installing by setting `PYTHONPATH=solver`.
