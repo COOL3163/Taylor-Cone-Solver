@@ -1,0 +1,25 @@
+\section{Introduction}
+
+A Taylor cone is the conical liquid interface that can form when electric Maxwell stress competes with capillary stress. In the ideal charge-free, perfectly conducting limit, its classical half-angle is $\alpha_{\mathrm{T}}\approx\SI{49.29}{\degree}$ \cite{taylor1964disintegration}. \rev{The fluid dynamics of Taylor cones connect this static equilibrium to moving interfaces, charge transport, and cone-jet emission \cite{fernandez2007fluid}.}
+
+\rev{Interfacial stress-balance theory \cite{melcher1969electrohydrodynamics} and the Taylor--Melcher leaky-dielectric model \cite{saville1997electrohydrodynamics} describe how electrical stresses interact with fluid motion and surface charge. Studies of emitted current \cite{fernandez1994current} and cone-jet scaling \cite{ganan1997conejet} relate emission behavior to liquid properties and flow rate, while coupled cone-and-jet models calculate interface shape, electric fields, and surface charge \cite{hartman1999electrohydrodynamic}. Experiments on cone-jet operation \cite{cloupeau1989conejet} and classifications of spraying modes \cite{cloupeau1994modes} further show the importance of specifying the operating regime when interpreting observed shapes.}
+
+\rev{Against this background, the present study examines the geometric information carried by two observables in a static model. Reliable angle identification requires a diagnostic that responds sufficiently to changes in candidate geometry. Comparing its sensitivity under controlled numerical and boundary settings provides a way to assess that requirement.}
+
+This paper addresses \rev{the following} numerical question: once an electric field has been computed around a candidate cone, does the selected observable identify its half-angle? We compare the minimum of an amplitude-projected stress residual with the crossing of a fitted flank-field power-law exponent. The distinction matters because a well-resolved field does not by itself make an inverse geometric estimate unique: a shallow objective can assign nearly equal values to distinct geometries.
+
+The solver is a two-dimensional axisymmetric finite-difference workflow with an immersed representation of the liquid interface (Figure~\ref{fig:system-schematic}). Manufactured solutions and curved-boundary refinement test components of the electrostatic calculation. Parameter and initialization studies then compare the two angle diagnostics. A separate image and stress-analysis workflow is demonstrated on published ethanol cone-jet figures\rev{, extending the analysis to secondary-data geometry extraction and fixed-pressure stress diagnosis}.
+
+\paragraph{Contributions.}
+\begin{enumerate}
+\item We show that, for the tested restricted cone family, amplitude-projected stress residuals are weakly angle-discriminating: their minima move by several degrees with numerical choices and initialization while their values change little.
+\item We show that, with the analytical Taylor potential imposed at the far boundary, the $p=-1$ flank-field crossing is substantially less variable across the tested configurations ($49.07^\circ$--$49.25^\circ$). This is a consistency check of the imposed Taylor far field, not an independent physical-angle prediction. With a grounded outer boundary, no $p=-1$ crossing occurs.
+\item We document the numerical and image-processing evidence with its provenance: reproducible manufactured, refinement, multistart, and synthetic tests; a retained FEM comparison whose source and mesh are absent from this repository; and a published-image workflow whose extracted intermediates are absent here.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/system_schematic.pdf}
+\caption{Axisymmetric electrostatic--capillary model (not to scale). A conducting liquid supplied at potential $V_0$ forms a candidate cone at the needle tip. The ideal Taylor half-angle is a charge-free, perfectly conducting limiting result; the finite-domain problems studied here impose either an analytical Taylor potential or a grounded condition on the outer boundary. The grounded extractor is at $\phi=0$.}
+\label{fig:system-schematic}
+\end{figure}

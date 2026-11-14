@@ -1,0 +1,51 @@
+\section{Theoretical Model}
+
+The model answers a focused question: once the electric field around a candidate cone is computed, which diagnostic identifies its half-angle more reliably? We compare a stress-balance residual with a field-scaling exponent. The model is static and axisymmetric\rev{, describing the electrostatic--capillary balance of prescribed candidate surfaces}.
+
+The conducting liquid is an equipotential surface represented by $r=R(z)$, parameterized by cone half-angle and rounded-tip radius. In the surrounding gas, the axisymmetric potential satisfies
+\begin{equation}
+\frac{1}{r}\frac{\partial}{\partial r}\left(r\frac{\partial\phi}{\partial r}\right)
++\frac{\partial^2\phi}{\partial z^2}=-\frac{\rho_e}{\epszero},
+\qquad \mathbf E=-\nabla\phi.
+\end{equation}
+The angle-diagnostic comparison is charge-free ($\rho_e=0$). Nonzero manufactured sources are used separately to verify the numerical operator.
+
+The potential is prescribed on the conductor, and symmetry requires $\partial_r\phi=0$ on the axis. Two outer-boundary configurations are distinguished: an imposed analytical Taylor potential and a grounded outer boundary. \rev{Each defines a distinct electrostatic problem, and their effects on the angle diagnostic are tested explicitly.} The rounded cap and a flank-sampling window keep the diagnostic away from the ideal apex singularity.
+
+\rev{From the computed field, the stress balance is evaluated at the interface.} For a perfectly conducting liquid, the gas-side normal field $E_n=\mathbf E\cdot\mathbf n$ produces an electric pressure that competes with capillary pressure:
+\begin{equation}
+ p_E=\frac{\epszero}{2}E_n^2,\qquad p_\gamma=\gamma\kappa,
+ \qquad \mathcal R=p_\gamma-p_E-\Delta p.
+\end{equation}
+Here $\gamma$ is surface tension, $\Delta p$ is a spatially constant pressure offset, and $\kappa$ is the sum of principal curvatures. For the graph interface,
+\begin{equation}
+\mathbf n=\frac{(1,-R_z)}{\sqrt{1+R_z^2}},\qquad
+\kappa=\frac{1}{R\sqrt{1+R_z^2}}-\frac{R_{zz}}{(1+R_z^2)^{3/2}}.
+\end{equation}
+
+The optimizer searches a restricted cone family \rev{parameterized by half-angle and rounded-tip radius}. It fits the constant pressure offset and electric-stress amplitude for each candidate. Let $\langle\cdot\rangle_w$ denote an arclength-weighted mean over the sampled flank and let $e=E_n/V_0$ be the field per unit voltage for a nonzero reference voltage $V_0$. Define
+\begin{equation}
+ a=p_\gamma-\langle p_\gamma\rangle_w,\qquad
+ b=e^2-\langle e^2\rangle_w.
+\end{equation}
+The least-squares amplitude and projected objective are
+\begin{equation}
+ u^*=\frac{\langle ab\rangle_w}{\langle b^2\rangle_w},\qquad
+ J=\sqrt{\langle(a-u^*b)^2\rangle_w}.
+\end{equation}
+This requires $\langle b^2\rangle_w>0$. A positive amplitude corresponds to a model balance voltage $\sqrt{2u^*/\epszero}$ \rev{for the prescribed candidate geometry}. Pressure and amplitude fitting remove two modes of mismatch\rev{, allowing distinct angles to attain similar values of $J$. The sensitivity study evaluates this geometric ambiguity.}
+
+\rev{The second diagnostic uses the spatial scaling of the flank field.} In the ideal Taylor limit, the potential near the apex has the separated form $\phi=A\rho^\nu P_\nu(\cos\vartheta)$, where $\rho$ is distance from the virtual cone vertex. Consequently,
+\begin{equation}
+ E_n^2\propto\rho^{2\nu-2},\qquad p_\gamma\propto\rho^{-1}.
+\end{equation}
+Matching electric and capillary stress scaling requires $2\nu-2=-1$, hence $\nu=1/2$ and $E_n^2\propto\rho^{-1}$. The equipotential condition $P_{1/2}(\cos\vartheta_0)=0$ gives the classical liquid half-angle $\alpha_T=180^\circ-\vartheta_0\approx49.29^\circ$ \cite{taylor1964disintegration}. \rev{This classical result supplies the reference scaling for the angle comparison.}
+
+For each candidate angle $\alpha$, the numerical diagnostic fits the flank data using
+\begin{equation}
+ \log E_n^2=c+p(\alpha)\log\rho,
+ \qquad p(\alpha_*)=-1.
+\end{equation}
+The crossing angle $\alpha_*$ tests the spatial scaling of the field rather than the magnitude of a fitted stress residual. It is compared with the residual-minimizing angle under changes in grid, domain, cap radius, and fitting window.
+
+\rev{Together, the two diagnostics distinguish field accuracy from angle identifiability. The residual measures the stress mismatch after pressure and amplitude fitting, while the exponent crossing evaluates field scaling under the specified boundary conditions. With imposed Taylor far-field data, the crossing provides an ideal-limit consistency diagnostic; for the tested grounded-boundary case, the fitted exponent remains away from $-1$. These properties define the comparison in Section~\ref{sec:completed-verification}.}

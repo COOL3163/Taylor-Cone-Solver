@@ -1,0 +1,67 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\input{revision_style}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black,
+    pdftitle={Reliable Taylor-Cone Angle Identification through Power-Law Exponent Crossing},
+    pdfauthor={Rui Xuan Ethan Yang, Li Ang Dong, Wai Ip Curtis Lau}
+}
+
+\sisetup{detect-all=true, per-mode=symbol}
+\setlist[itemize]{topsep=2pt,itemsep=2pt,parsep=0pt}
+\setlist[enumerate]{topsep=2pt,itemsep=2pt,parsep=0pt}
+
+\newcommand{\epszero}{\varepsilon_0}
+\newcommand{\ph}{\phi}
+\newcommand{\Er}{E_r}
+\newcommand{\Ez}{E_z}
+\newcommand{\Emag}{|\mathbf{E}|}
+\newcommand{\resid}{\mathcal{R}}
+\newcommand{\rhoe}{\rho_e}
+
+\title{\textbf{Reliable Taylor-Cone Angle Identification through Power-Law Exponent Crossing}}
+\author{Rui Xuan Ethan Yang, Li Ang Dong, Wai Ip Curtis Lau\\
+Independent Schools Foundation Academy, Hong Kong SAR}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\setlength{\emergencystretch}{2em}
+\input{sections/00_abstract}
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\input{sections/01_introduction}
+\input{sections/03_research_question}
+\input{sections/04_theoretical_model}
+\input{sections/05_solver_architecture}
+\input{sections/06_numerical_results}
+\input{sections/07_public_validation}
+\input{sections/09_limitations}
+\input{sections/10_conclusion_future_work}
+
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

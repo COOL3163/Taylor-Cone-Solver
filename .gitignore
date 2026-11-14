@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.bbl
+*.blg
+
+# Experimental data (raw images, videos - keep metadata and results)
+results/experimental_data/images/*.jpg
+results/experimental_data/images/*.png
+results/experimental_data/images/*.mp4
+results/experimental_data/images/*.avi
+
+# Keep directory structure but not contents
+!results/experimental_data/images/.gitkeep
+!results/experimental_data/metadata/.gitkeep
+!results/experimental_data/frozen_predictions/.gitkeep
+!results/experimental_data/profiles/.gitkeep
+
+# Claude AI session data (local only)
+.claude/
+.agents/
+
+# Temporary PDFs during drafting
+ISEF*.pdf
+
+.pptxenv
+.reasonix
+work
