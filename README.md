@@ -170,7 +170,7 @@ Independent Schools Foundation Academy, Hong Kong SAR
 
 **Contact:**
 - Rui Xuan Ethan Yang: eyang8216@gmail.com
-- Li Ang Dong: elliott.dong3015002@gmail.com
+- Li Ang Dong: elliott.dong.2009@outlook.com
 - Wai Ip Curtis Lau: cwilau09@gmail.com
 
 **Work Contribution:**
@@ -286,7 +286,7 @@ Independent Schools Foundation Academy, Hong Kong SAR
 
 **Contact:**
 - Rui Xuan Ethan Yang: eyang8216@gmail.com
-- Li Ang Dong: elliott.dong3015002@gmail.com
+- Li Ang Dong: elliott.dong.2009@outlook.com
 - Wai Ip Curtis Lau: cwilau09@gmail.com
 
 For questions or collaboration inquiries, please open a GitHub issue or contact the authors directly.
